@@ -61,7 +61,7 @@ public struct RatingsView: View {
                     .scaledToFit()
                     .fillImage(correctImage(for: rating))
                     .foregroundStyle(Color(color))
-                    .onTapGesture {
+                    .onTapGesture { // Responsible for changing rating
                         withAnimation{
                             currentRating = rating + 1
                         }
@@ -70,6 +70,10 @@ public struct RatingsView: View {
         }.frame(width: CGFloat(maxRating * width))
     }
     
+    /// Determines the correct image variant for a given rating.
+    ///
+    /// - Parameter rating: The rating to check.
+    /// - Returns: `true` if the rating should display the filled image variant; otherwise, `false`.
     func correctImage(for rating: Int) -> Bool {
         if let currentRating, rating < currentRating {
             return true
@@ -79,8 +83,14 @@ public struct RatingsView: View {
     }
 }
 
+/// A view modifier that applies a fill variant to the image if specified.
 struct FillImage: ViewModifier {
     let fill: Bool
+    
+    /// A view modifier extension to apply the `FillImage` modifier.
+    ///
+    /// - Parameter fill: A boolean value indicating whether to fill the image.
+    /// - Returns: A view with the fill image modifier applied.
     func body(content: Content) -> some View {
         if fill {
             content
