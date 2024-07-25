@@ -145,10 +145,10 @@ struct EditBookView: View {
     }
 }
 
-//#Preview {
-//    NavigationStack{
-//        // Some changes weren't updating in Preview.
-//        // Reason: Preview didn't know we are in navigation Stack
-//        EditBookView()
-//    }
-//}
+#Preview {
+    let preview = Preview(Book.self)
+    return NavigationStack{
+        EditBookView(book: Book.sampleBooks[4])
+            .modelContainer(preview.container)
+    }
+}
