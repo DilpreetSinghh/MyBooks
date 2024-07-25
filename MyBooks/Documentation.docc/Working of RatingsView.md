@@ -1,4 +1,5 @@
 # Working of RatingView
+
 File in project, responsible for changing the rating with tapGesture
 
 
