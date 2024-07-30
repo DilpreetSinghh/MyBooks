@@ -15,9 +15,11 @@ class Book {
     var dateAdded: Date
     var dateStarted: Date
     var dateCompleted: Date
-    var summary: String
+    @Attribute(originalName: "summary")
+    var synopsis: String
     var rating: Int?
     var status: Status.RawValue
+    var recommendedBy: String = ""
     
     // Initializer for the Book class with default values for some parameters
     init(
@@ -26,18 +28,20 @@ class Book {
         dateAdded: Date = Date.now, // Defaults to the current date and time
         dateStarted: Date = Date.distantPast, // Defaults to a distant past date
         dateCompleted: Date = Date.distantPast, // Defaults to a distant past date
-        summary: String = "", // Defaults to an empty string
+        synopsis: String = "", // Defaults to an empty string
         rating: Int? = nil, // Defaults to nil, meaning no rating
-        status: Status = .onShelf // Defaults to .onShelf status
+        status: Status = .onShelf, // Defaults to .onShelf status
+        recommendedBy: String = "" //Defaults to empty string
     ) {
         self.title = title
         self.author = author
         self.dateAdded = dateAdded
         self.dateStarted = dateStarted
         self.dateCompleted = dateCompleted
-        self.summary = summary
+        self.synopsis = synopsis
         self.rating = rating
         self.status = status.rawValue
+        self.recommendedBy = recommendedBy
     }
     
     // Computed property that returns an appropriate icon based on the book's status
