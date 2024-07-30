@@ -20,7 +20,7 @@ struct BookList: View {
     ///
     /// - Sort descriptors are configured accordingly.
     /// - `let sortDescriptors: [SortDescriptor<Book>] = switch sortOrder {...}`, Sorts logic based on the sortOrder input
-    init(sortOrder: SortOrder){
+    init(sortOrder: SortOrder, filterString: String){
         let sortDescriptors: [SortDescriptor<Book>] = switch sortOrder {
             case .status:
                 [SortDescriptor(\Book.status), SortDescriptor(\Book.title)]
@@ -29,7 +29,12 @@ struct BookList: View {
             case .author:
                 [SortDescriptor(\Book.author)]
         }
-        _books = Query(sort: sortDescriptors)
+        let predicate = #Predicate<Book> { book in
+            book.title.localizedStandardContains(filterString)
+            || book.author.localizedStandardContains(filterString)
+            || filterString.isEmpty
+        }
+        _books = Query(filter: predicate, sort: sortDescriptors)
     }
     var body: some View {
         Group {
@@ -76,8 +81,8 @@ struct BookList: View {
     let preview = Preview(Book.self)
     preview.addExample(Book.sampleBooks)
     return NavigationStack {
-        BookList(sortOrder: .status)
+        BookList(sortOrder: .status, filterString: "")
     }
-        .modelContainer(preview.container)
+    .modelContainer(preview.container)
     
 }
