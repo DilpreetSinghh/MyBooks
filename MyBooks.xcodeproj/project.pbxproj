@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D61A8A52C57E28400BC0D95 /* BookList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D61A8A42C57E28400BC0D95 /* BookList.swift */; };
 		7DC006342C40BD87000C461D /* MyBooksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC006332C40BD87000C461D /* MyBooksApp.swift */; };
 		7DC006362C40BD87000C461D /* BookListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC006352C40BD87000C461D /* BookListView.swift */; };
 		7DC006382C40BD8A000C461D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DC006372C40BD8A000C461D /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7D61A8A42C57E28400BC0D95 /* BookList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookList.swift; sourceTree = "<group>"; };
 		7DC006302C40BD87000C461D /* MyBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyBooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DC006332C40BD87000C461D /* MyBooksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBooksApp.swift; sourceTree = "<group>"; };
 		7DC006352C40BD87000C461D /* BookListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListView.swift; sourceTree = "<group>"; };
@@ -65,15 +67,16 @@
 		7DC006322C40BD87000C461D /* MyBooks */ = {
 			isa = PBXGroup;
 			children = (
-				7DC006332C40BD87000C461D /* MyBooksApp.swift */,
-				7DC006352C40BD87000C461D /* BookListView.swift */,
-				7DF693A42C470BF300B5F962 /* EditBookView.swift */,
-				7DF693A62C471BD400B5F962 /* RatingsView.swift */,
-				7DF693A22C46488800B5F962 /* NewBookView.swift */,
-				7DC006412C40BF1D000C461D /* Book.swift */,
-				7DF093982C4F5B1D00EC494B /* Documentation.docc */,
 				7DC006372C40BD8A000C461D /* Assets.xcassets */,
+				7DC006412C40BF1D000C461D /* Book.swift */,
+				7D61A8A42C57E28400BC0D95 /* BookList.swift */,
+				7DC006352C40BD87000C461D /* BookListView.swift */,
+				7DF093982C4F5B1D00EC494B /* Documentation.docc */,
+				7DF693A42C470BF300B5F962 /* EditBookView.swift */,
+				7DC006332C40BD87000C461D /* MyBooksApp.swift */,
+				7DF693A22C46488800B5F962 /* NewBookView.swift */,
 				7DC006392C40BD8A000C461D /* Preview Content */,
+				7DF693A62C471BD400B5F962 /* RatingsView.swift */,
 			);
 			path = MyBooks;
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 			files = (
 				7DFDC7402C52903900C9F8A3 /* PreviewContainer.swift in Sources */,
 				7DF693A32C46488800B5F962 /* NewBookView.swift in Sources */,
+				7D61A8A52C57E28400BC0D95 /* BookList.swift in Sources */,
 				7DF693A72C471BDD00B5F962 /* RatingsView.swift in Sources */,
 				7DF093992C4F5B1D00EC494B /* Documentation.docc in Sources */,
 				7DF693A52C470BF300B5F962 /* EditBookView.swift in Sources */,

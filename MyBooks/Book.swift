@@ -17,7 +17,7 @@ class Book {
     var dateCompleted: Date
     var summary: String
     var rating: Int?
-    var status: Status
+    var status: Status.RawValue
     
     // Initializer for the Book class with default values for some parameters
     init(
@@ -37,12 +37,12 @@ class Book {
         self.dateCompleted = dateCompleted
         self.summary = summary
         self.rating = rating
-        self.status = status
+        self.status = status.rawValue
     }
     
     // Computed property that returns an appropriate icon based on the book's status
     var icon: Image {
-        switch status {
+        switch Status(rawValue: status)! {
             case .onShelf:
                 Image(systemName: "checkmark.diamond.fill")
             case .inProgress:
